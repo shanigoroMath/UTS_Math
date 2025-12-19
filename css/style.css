@@ -51,7 +51,7 @@ a:hover{
 }
 
 a:active{
-    color: blueviolet;
+    color: dodgerblue;
     text-decoration: underline;
 }
 
@@ -556,4 +556,29 @@ iframe {
 .go-top-float:hover {
   box-shadow: 0 0 12px aquamarine;
   transform: translateY(-4px);
+}
+
+
+/*---------------画像拡大モーダル---------------*/
+#img-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+}
+
+#img-modal img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  cursor: zoom-out;
+}
+
+
+/* クリックできることを示す */
+.clickable-img {
+  cursor: zoom-in;
 }
