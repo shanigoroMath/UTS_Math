@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2020年東大理系数学第6問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+</head>
+
+
+<body data-problem="2020-6"  id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../index.html"></a>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2020-6</div></h2>
+
+            <div class="emphbox">
+                <p>
+以下の問いに答えよ。<br>
+<br>
+(1)　$A,\ \alpha$ を実数とする。$\theta$ の方程式<br>
+$A\sin 2\theta-\sin(\theta+\alpha)=0$<br>
+を考える。$A>1$ のとき，この方程式は $0\le\theta < 2 \pi$ の範囲に少なくとも $4$ 個の解を持つことを示せ。<br>
+<br>
+(2)　座標平面上の楕円<br>
+$C:\ \frac{x^2}{2}+y^2=1$<br>
+を考える。また，$0 < r < 1$ を満たす実数 $r$ に対して，不等式<br>
+$2x^2+y^2 < r^2$<br>
+が表す領域を $D$ とする。$D$ 内のすべての点 $P$ が以下の条件を満たすような実数 $r\ (0 < r < 1)$ が存在することを示せ。また，そのような $r$ の最大値を求めよ。<br>
+<br>
+条件：$C$ 上の点 $Q$ で，$Q$ における $C$ の接線と直線 $PQ$ が直交するようなものが少なくとも $4$ 個ある。<br></p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>解答例</div></h2>
+
+            <p>(1)「少なくとも」4個の解を持つことを示すだけであれば中間値で十分。<br>
+              (2)問題文が少々複雑だが、意外と脳死でパラメータ表示するだけでうまくいく。しかし最後の$\frac12 < r < 1$の確認を忘れると、論理的にまずい。<br><br>
+              論理記号だらけの解答となってしまいました。記号の説明は後述しますのでご容赦ください。。
+                <div class="toggle-box">
+                    <input type="checkbox" id="2020-6">
+                    <label for="2020-6"
+                    class="toggle-label">▶ 解答例(通常画像)(タップで拡大)</label>
+                    <div class="toggle-content">
+                        <img src="figure/20251219_173727.jpg" width="400px" class="clickable-img" onclick="openImgModal(this.src)">
+                    </div>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>動く図解</div></h2>
+
+            <p>(1)の解を二つのグラフの交点とみたときの図です。</p>
+            <iframe src="https://www.desmos.com/calculator/lj3oi1p3bg?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+            <p>(2)の問題の図示です。$P$が青色領域のどこに行っても$Q$が4つあるためには、$r$がどのような値であればよいでしょうか？</p>
+            <p>(境界付近で挙動がおかしいのは許してください...)</p>
+            <iframe src="https://www.desmos.com/calculator/eiwndccox8?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+            <p>東大がたまに出す、「論理/同値変形」がらみの問題です。こういう問題が出ると、「そもそも何を言っているのか分からない」となることがありますが、これは高校生に限った話ではなく、大学数学でもある話のようです。というのも、大学以降の数学では、日本語の曖昧性や不完全性を回避するべく、「論理記号」を用いて文章を記述します。<span style="font-size: 0.8em;">（日本語の欠点なんて、「未満の対義語が存在しない」「"逆に"という言葉の意味が広すぎる」など、挙げればキリがありませんからね...）</span>ところが、いきなり$\varepsilon -N$論法なんかに触れる大学生は論理式が解読不能になってしまうみたいです。(※)</p>
+            <p>もしかすると、東大がこういう問題を出すのは、教授が講義するに当たって「せめて必要と十分や、同値性、任意と存在くらいは理解している人を入学させたい」という意図があるのかもしれません。<br>また、実は1950年代の高校数学では論理や写像を必修にしていたという歴史があります。つまり、今の教授はその世代を経験しているため、論理が分からない大学生を憂う気持ちがあるのかもしれないということです。これは私の憶測にすぎないですけどね...。</p><br>
+
+            <p>そういうこともあって、[解答例]では論理記号と日本語を併用しつつ記述してみました。かえってわかりにくいかもしれませんが、少なくとも誤解は無いと思います。一応記号の説明をしておくと、「$\exists r$」と書いたときは「ある$r$が存在して」と読み、「$\forall \alpha$」と書いたときは「任意の$\alpha$に対し」と読みます。なので、[解答例]における(2)4行目は、「0より大きく1より小さいある実数$r$が存在して、0以上$2\pi$未満の任意の実数$\alpha$に対して、0以上$r$未満の任意の実数$R$に対し、[～（以下略）]」となります。英語同様に後付けで書くので、日本語だと違和感がすごいですね。（重箱の隅をつつくような話をすると、本当は変数の範囲が実数であることも論理式に組み込むべきです）</p><br>
+
+            <p>このような論理変形のあれこれは注意事項がかなり多く、知らないうちに地雷を踏むこともしばしばあります。私は某予備校T進の回し者ではないですが、青木純二先生の「数学の真髄」（書籍）はこのあたりが非常によくまとめられていて、東大志望者にはオススメです。受験生は知る必要は無いと言う意見も見かけますが、私は、これを学んでこそ数学が得意だと名乗れると思っています。（もちろん高3の夏とかに学び始めるのは、表面上でしか身につかないのでおすすめしない）</p>
+            <p>※完全な余談になりますが、「きいねく」さんがfanboxで論理式に関するマンガを投稿されていたので、興味があったらどうぞ。（<a href="https://keyneqq.fanbox.cc/posts/2047711">https://keyneqq.fanbox.cc/posts/2047711</a>）</p>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <p>論理系の問題を集めました。</p>
+
+            <div class="emphbox">変数 $x,\ y,\ u,\ v$ は $0$ 以上の実数で，かつ<br>
+<br>
+$x+y=1$<br>
+$u+v=1$<br>
+<br>
+という条件の下で変化する。この $4$ 変数について，次の関数 $f$ を考える。<br>
+<br>
+$f=xu+2xv+3yu+4yv$<br>
+<br>
+(1)　$f$ のとり得る最大値と最小値を求めよ。<br>
+<br>
+(2)　次の $2$ 条件がともに成立するような $k$ の値を求めよ。<br>
+<br>
+(i)　適当な $x,\ y$ の値をとれば，$u,\ v$ の値をどのように決めても $f\ge k$ となる。<br>
+<br>
+(ii)　適当な $u,\ v$ の値をとれば，$x,\ y$ の値をどのように決めても $f\le k$ となる。<br><br>(出典不明、入試問題)</div><br>
+
+
+
+
+            <div class="emphbox"><blockquote class="twitter-tweet" data-theme="dark"><p lang="ja" dir="ltr">高校生のときに作った問題です<br><br>高校生ならどう解くか考えてみてください <a href="https://t.co/F1mYsJLvEi">pic.twitter.com/F1mYsJLvEi</a></p>&mdash; penta (@penta_math) <a href="https://twitter.com/penta_math/status/1804440797888328120?ref_src=twsrc%5Etfw">June 22, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>(Twitter,pentaさんの作問)</div><br>
+
+
+            <div class="emphbox">$|z|>\frac{5}{4}$ となるどのような複素数 $z$ に対しても $w=z^2-2z$ は表されない複素数 $w$ 全体の集合を $T$ とする。すなわち，<br>
+<br>
+$T=\{,w\mid w=z^2-2z\ \text{ならば}\ |z|\le\frac{5}{4},\}$<br>
+<br>
+とする。このとき，$T$ に属する複素数 $w$ で絶対値 $|w|$ が最大となるような $w$ の値を求めよ。<br><br>（<span style="color: orange;">東大2005</span>）</div><br>
+
+
+
+            <div class="emphbox">$C$ を $y=x^3-x,\ -1\le x\le 1$ で与えられる $xy$ 平面上の図形とする。次の条件をみたす $xy$ 平面上の点 $P$ 全体の集合を図示せよ。<br>
+<br>
+「$C$ を平行移動した図形で，点 $P$ を通り，かつもとの図形 $C$ との共有点がただ $1$ 点であるようなものが，ちょうど $3$ 個存在する。」<br><br>(<span style="color: orange;">東大1988</span>,激ムズ)<br><iframe width="560" height="315" src="https://www.youtube.com/embed/QpMp_eDDwHc?si=_5rJxgXTTyuoFTvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+        </div>
+
+            
+
+        <a class="gouts" href="../index.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+  document.getElementById("side-toggle").onclick = () =>
+    document.getElementById("side-nav").classList.add("open");
+
+  document.getElementById("side-close").onclick = () =>
+    document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
+});
+</script>
+
+
+<script>
+function openImgModal(src) {
+  const modal = document.getElementById("img-modal");
+  const modalImg = document.getElementById("img-modal-content");
+  modalImg.src = src;
+  modal.style.display = "block";
+}
+
+function closeImgModal() {
+  document.getElementById("img-modal").style.display = "none";
+}
+</script>
+
+
+
+
+<div id="img-modal" onclick="closeImgModal()">
+  <img id="img-modal-content">
+</div>
+
+
+
+
+</body>
+
+
+</html>
