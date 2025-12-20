@@ -298,7 +298,7 @@
                 </tr>
 
                 <tr>
-                    <th>2005<br><span style="font-size: 0.5em;">"あの"整数問題</span></th><td></td>
+                    <th>2005<br><span style="font-size: 0.45em;">有名になった整数問題</span></th><td></td>
                     <td><a href="pages/2005_1.html"><img src="pages/td/スライド121.JPG" alt="2005-1"></a></td>
                     <td><a href="pages/2005_2.html"><img src="pages/td/スライド122.JPG" alt="2005-2"></a></td>
                     <td><a href="pages/2005_3.html"><img src="pages/td/スライド123.JPG" alt="2005-3"></a></td>
@@ -318,7 +318,7 @@
                 </tr>
 
                 <tr>
-                    <th>2003</th><td></td>
+                    <th>2003<br><span style="font-size: 0.5em;">伝説的名問、$\pi>3.05$</span></th><td></td>
                     <td><a href="pages/2003_1.html"><img src="pages/td/スライド133.JPG" alt="2003-1"></a></td>
                     <td><a href="pages/2003_2.html"><img src="pages/td/スライド134.JPG" alt="2003-2"></a></td>
                     <td><a href="pages/2003_3.html"><img src="pages/td/スライド135.JPG" alt="2003-3"></a></td>
@@ -521,13 +521,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // 開閉処理
-  document.getElementById("side-toggle").onclick = () =>
-    document.getElementById("side-nav").classList.add("open");
+const nav = document.getElementById("side-nav");
+const toggle = document.getElementById("side-toggle");
+const close = document.getElementById("side-close");
+const overlay = document.getElementById("side-overlay");
 
-  document.getElementById("side-close").onclick = () =>
-    document.getElementById("side-nav").classList.remove("open");
+toggle.onclick = () => {
+  nav.classList.toggle("open");
+  overlay.classList.toggle("show");
+};
+
+close.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+// 背景クリックで閉じる
+overlay.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
 });
 </script>
+
 <a href="#top" class="go-top-float">▲</a>
 <script>
 const gotop = document.querySelector('.go-top-float');
@@ -543,6 +560,7 @@ window.addEventListener('scroll', () => {
 
 
 </body>
+<div id="side-overlay"></div>
 
 
 </html>
