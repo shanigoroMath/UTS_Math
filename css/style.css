@@ -370,14 +370,19 @@ iframe {
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   color: black;
+  text-align: center;
 }
 
 /* チェックが入ったら中身を表示 */
 .toggle-box input:checked ~ .toggle-content {
-  max-height: 700px; /* 十分大きい値にしておく */
+  max-height: 300px; /* 十分大きい値にしておく */
   padding: 10px;
 }
 
+.toggle-box input:checked ~ .longanswer {
+  max-height: 2000px;
+  padding: 10px;
+}
 
 /*=================emphbox(青box)=================*/
 
@@ -595,9 +600,9 @@ iframe {
   cursor: zoom-out;
 }
 
-
 /* クリックできることを示す */
 .clickable-img {
   cursor: zoom-in;
+  width: 100%;
+  border: 4px solid #02075c;
 }
-
