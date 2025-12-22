@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2024年東大理系数学第2問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <title>2024年東大理系数学第2問</title>
     <link rel="stylesheet" href="../css/style.css">
     
     <!--latex読み込み-->
@@ -66,6 +66,11 @@
     <main>
         
         <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
         <div class="paragraph">
             
             <h2><div>東大理系数学 2024-2</div></h2>
@@ -236,6 +241,61 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
 
 
 </body>

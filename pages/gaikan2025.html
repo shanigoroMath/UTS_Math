@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2025年東大理系数学を概観！|東大理系数学の解剖|BASE256</title>
+    <title>2025年東大理系数学概観</title>
     <link rel="stylesheet" href="../css/style.css">
     
     <!--latex読み込み-->
@@ -66,6 +66,11 @@
     <main>
         
         <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
         <div class="paragraph">
             
             <h2><div>東大理系数学 2025</div></h2>
@@ -151,11 +156,13 @@ $(T_i)$：左から $i$ 番目の札の数字が，左から $(i+1)$ 番目の�
         <div class="paragraph">
 
             <h2><div>分析</div></h2>
+            <!--
             <p>・新課程「情報I」の共テ科目追加に伴い、ベジェ曲線やバブルソートなど、情報デザインを背景にした問題が散見された。</p>
 
             <p>・大問5がずば抜けて難度が高い。2017-2以降確率漸化式/組合せ漸化式は昨年まで出題されておらず、復活の2年目であったが、悪魔的難化を遂げることとなった。</p>
 
             <p>・例年大問6は(特に直近の3年間)、捨て問と呼ばれるほどの難問が置かれ、大数評価も毎年Dとなっていた。しかし今年の大問6の点は取りやすく、大問5と明らかに難易度の逆転が発生していたということで、得点率を下げる原因の一つとなった。</p>
+            -->
         </div>
 
         <a class="gouts" href="../index.html"></a>
@@ -259,6 +266,61 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
 
 
 

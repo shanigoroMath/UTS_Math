@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2019年東大理系数学第1問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <title>2019年東大理系数学第1問</title>
     <link rel="stylesheet" href="../css/style.css">
     
     <!--latex読み込み-->
@@ -66,6 +66,11 @@
     <main>
         
         <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
         <div class="paragraph">
             
             <h2><div>東大理系数学 2019-1</div></h2>
@@ -98,9 +103,52 @@
 
             <h2><div>問題の背景</div></h2>
 
-            <p>まさかの「ただ積分するだけの第一問」として話題になった問題です。特に技巧的な方法を試みる必要性はあまりなく、本当に計算問題です。とはいえ、そもそも東大の積分（体積ではなく、ただ積分計算をする問題）は、そのほとんどは工夫はいらず、淡々と複雑な計算をさせるだけのものばかりです。むしろ数学的意味を考えるのが無駄なものさえあります。(2021-3,2014-3)。なので、特段深く考えずに計算した者勝ちの問題だったのでしょう。</p>
+            <p>まさかの「ただ積分するだけの第一問」として話題になった問題です。特に技巧的な方法を試みる必要性はあまりなく、本当に計算問題です。とはいえ、そもそも東大の積分（体積ではなく、ただ積分計算をする問題）は、そのほとんどは工夫はいらず、淡々と複雑な計算をさせるだけのものばかりです。むしろ数学的意味を考えるのが無駄なものさえあります。(2021-3,2014-3)。なので、特段深く考えずに計算した者勝ちの問題といえます。</p>
 
-            <p>しかしこの問題、積分するだけなのだとしたら、なぜ因数分解された形で、しかも左の項が中途半端にまとめられた状態で出題したのでしょうか？</p><p>ということで、ここからはこの問題ができるまでの経緯の予想を話します。【あくまで予想なので、真相は作問者のみぞ知るということに注意】</p>
+            <p>ついでなので、この手の高度典型の積分一覧を示しておきます。本問もこれを網羅すればオーバーキルできるでしょう。</p>
+
+            <div class="emphbox" style="background-color: rgb(40, 0, 0);">
+              <p>以下では、$y=\tan x(|x| < \frac{\pi}{2})$の逆関数を$\tan^{-1}x$のように書く。他も同様。</p>
+                
+                <div class="problist">
+                    
+                    <div class="autof">
+                        <p style="font-weight:bolder;text-decoration: underline;">★Level1：基本</p>
+                        
+                        <p>$$(1) \ \int\frac{dx}{x^2+a^2}=\frac1a\tan^{-1}{\frac{x}{a}}+C$$</p>
+
+                        <p>$$(2) \ \int\frac{dx}{x^2-a^2}=-\frac1a\tanh^{-1}{\frac{x}{a}}+C$$</p>
+                        
+                        <p>$$(3) \ \int\frac{dx}{(x^2+a^2)^2}=\frac{1}{2a^3}\left(\tan^{-1}{\frac{x}{a}}+\frac{ax}{a^2+x^2}\right)+C$$</p>
+
+                        <p>$$(4) \ \int\frac{dx}{(x^2-a^2)^2}=\frac{1}{2a^3}\left(\tanh^{-1}{\frac{x}{a}}+\frac{ax}{a^2-x^2}\right)+C$$</p>
+
+                        <p>$$(5) \ \int\frac{x}{x^2\pm a^2}dx=\frac{1}{2}\log{\left|x^2\pm a^2\right|}+C$$</p>
+                        
+                        <p>$$(6) \ \int\frac{x}{(x^2\pm a^2)^2}dx=-\frac{1}{2(x^2\pm a^2)}+C$$</p>
+                        
+                        <p>$$(7) \ \int\sqrt{a^2-x^2}dx=\frac{1}{2}\left(x\sqrt{a^2-x^2}-a^2\cos^{-1}{\frac{x}{a}}\right)+C$$</p>
+                    </div>
+
+                    <div class="autof">
+                        <p style="font-weight:bolder;text-decoration: underline;">★★Level2：標準</p>
+                        
+                        <p>$$(8) \ \int\frac{dx}{\sqrt{x^2+ a^2}}=\sinh^{-1}{\frac{x}{a}}+C$$</p>
+                        
+                        <p>$$(9) \ \int\frac{dx}{\sqrt{x^2- a^2}}=\cosh^{-1}{\frac{x}{a}}+C$$</p>
+                        
+                        <p>$$(10) \ \int\frac{dx}{\sqrt{a^2- x^2}}=-\cos^{-1}{\frac{x}{a}}+C$$</p>
+                        
+                        <p>$$(11) \ \int\sqrt{x^2+a^2}dx=\frac{1}{2}\left(x\sqrt{a^2+x^2}+a^2\sinh^{-1}{\frac{x}{a}}\right)+C$$</p>
+                        
+                        <p>$$(12) \ \int\sqrt{x^2-a^2}dx=\frac{1}{2}\left(x\sqrt{x^2-a^2}-a^2\cosh^{-1}{\frac{x}{a}}\right)+C$$</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <p>...しかしこの問題、積分するだけなのだとしたら、なぜ因数分解された形で、しかも左の項が中途半端にまとめられた状態で出題したのでしょうか？</p><p>ということで、ここからはこの問題ができるまでの経緯の予想を話します。【あくまで予想なので、真相は作問者のみぞ知るということに注意】</p>
         </div>
 
         <div class="paragraph">
@@ -139,7 +187,7 @@
 
             <div class="emphbox">本問：$$ \int_0^1 \left(x^2+\frac{x}{\sqrt{1+x^2}}\right)\left(1+\frac{x}{(1+x^2)\sqrt{1+x^2}}\right)dx$$</div><br>
 
-            <div class="emphbox" style="background-color: rgba(103, 0, 0, 0.685);">$S$の計算式(符号除く):$$\int_0^1\left(x^2{\color{lime}-}\frac{\color{lime}2}{\sqrt{1+x^2}}\right)\left(1+\frac{\color{lime}1}{(1+x^2)\sqrt{1+x^2}}\right)dx$$</div>
+            <div class="emphbox" style="background-color: rgba(103, 0, 0, 0.685);">$S$の計算式(符号除く):$$\int_0^1\left(x^2{\boldsymbol{\color{yellow}-}}\frac{\boldsymbol{\color{yellow}2}}{\sqrt{1+x^2}}\right)\left(1+\frac{\boldsymbol{\color{yellow}1}}{(1+x^2)\sqrt{1+x^2}}\right)dx$$</div>
 
             <p>ここからは完全に予想になってしまうのですが、おそらく本問は次のように作問されたのかなと思います。</p><br>
 
@@ -206,7 +254,7 @@
                 <label for="2019-1-p3"
                 class="toggle-label">▶ ひとこと</label>
                 <div class="toggle-content">   
-                    極座標の面積とみる面白い解法がある
+                    極座標の面積$\int\frac12r^2d\theta$と考える別解が面白い
                 </div>
             </div>
           </div>
@@ -320,6 +368,61 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
 
 
 </body>

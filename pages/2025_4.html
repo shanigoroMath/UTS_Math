@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2025年東大理系数学第4問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <title>2025年東大理系数学第4問</title>
     <link rel="stylesheet" href="../css/style.css">
     
     <!--latex読み込み-->
@@ -66,6 +66,11 @@
     <main>
         
         <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
         <div class="paragraph">
             
             <h2><div>東大理系数学 2025-4</div></h2>
@@ -147,7 +152,7 @@ $\sqrt{N+\sqrt{pq}}$が実数となり、かつ二重根号を外した形にで
                 <input type="checkbox" id="2025-2-p1">
                 <label for="2025-2-p1"
                 class="toggle-label">▶ 解答[私の作問pdfのコピー]</label>
-                <div class="toggle-content">   
+                <div class="toggle-content longanswer">   
                     対称性より、$p\geqq q$としてよい。有理数$s,t$を用いて$\sqrt{N+\sqrt{pq}}=\sqrt{s}+\sqrt{t}$と書ける。このとき両辺を二乗して、$N+\sqrt{pq}=s+t+\sqrt{4st}$　$s,t$は有理数なので、$pq=4st$.したがって$N=s+t$.解と係数の関係より、2次方程式$x^2-Nx+\frac{pq}{4}=0$が正の有理数解のみを持てばよい。<br>
                     よって判別式$N^2-pq$が平方数である事が必要(∵ $N^2-pq$は整数)。以下、整数$N,M(M\geqq0)$についての不定方程式$N^2-M^2=pq\Leftrightarrow(N+M)(N-M)=pq$を解く。<br>
                     $N+M\geqq N-M\geqq0$より、<br>
@@ -336,6 +341,61 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
 
 
 </body>
