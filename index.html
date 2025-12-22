@@ -77,17 +77,30 @@
         <div class="paragraph">
             <h2><div>東大理系数学の解剖</div></h2>
 
-            <p>東大理系数学のあれこれを徹底的に調べ上げ、まとめページを作ってみました。</p>
-
-            <p>問題の難易度や得点戦略よりも、問題の背景の深掘りや、類題研究等を重視したいと思っています。なので、問題そのものの解答は略解のみ、もしくは省略とさせていただく事が多いです。（そもそも他のサイトで少し探せば解説はすぐ見つかるので...。）</p>
-
-            <p>このサイトが誰かの役に立ちますように...</p><br>
+            
 
             <div class="emphbox">
-                <p style="font-size: 0.8em;">未着手の記事は半透明化&無効化してあります。(ちょっと工夫すると見られるものもあったりするんですけどね...)<br>また、難易度は「大学への数学」による評価を参照しています。そのため、「当時の受験生にとっての難易度」であることに注意してください</p>
-            </div><br>
+                <p>東大理系数学のあれこれを調べ上げて、まとめページを作ってみました。</p>
 
-            <p>★内容に関する問い合わせ、改善案、類題提供などありましたら、主のTwitter（<a href="https://x.com/NABLA_DEL">https://x.com/NABLA_DEL</a>）へお寄せください！★</p>
+                <p>問題の難易度や得点戦略よりも、<span style="font-weight: bold;">背景の深掘りや類題研究</span>等を重視したいと思っています。そのため、問題そのものの解答は略解のみ、もしくは省略とさせていただく事が多いです。（そもそも他のサイトで少し探せば解説はすぐ見つかるので...。）</p><br>
+
+                <p style="font-size: 0.8em;">未着手の記事は半透明化&無効化してあります。<br>また、難易度は「大学への数学」による評価を参照しています。そのため、「当時の受験生にとっての難易度」であることに注意してください</p><br>
+
+                <p style="color: yellow;">★内容に関する問い合わせ、改善案、類題提供などありましたら、主のTwitter（<a href="https://x.com/NABLA_DEL">https://x.com/NABLA_DEL</a>）へお寄せください！★</p>
+            </div>
+
+            <section id="bookmarks">
+                <h3>ブックマークした記事</h3>
+
+                <ul id="bookmark-list"></ul>
+
+                <p id="bookmark-empty" style="display:none;">
+                まだブックマークはありません。
+                </p>
+            </section><br>
+
+
+
             
 
             <div class="problemtable-container">
@@ -556,6 +569,63 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const list = document.getElementById("bookmark-list");
+  const empty = document.getElementById("bookmark-empty");
+
+  const bookmarks = [];
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+
+    // bookmark- 以外は無視
+    if (!key.startsWith("bookmark-")) continue;
+
+    const raw = localStorage.getItem(key);
+
+    let data;
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      continue; // JSONでなければ無視
+    }
+
+    if (!data.bookmarked) continue;
+
+    bookmarks.push({
+      path: key.replace("bookmark-", ""),
+      title: data.title
+    });
+  }
+
+  if (bookmarks.length === 0) {
+    empty.style.display = "block";
+    return;
+  }
+
+  // 表示
+  bookmarks.forEach(item => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.href = item.path;
+    a.textContent = item.title;
+
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+
+});
+</script>
+
+
 
 
 
