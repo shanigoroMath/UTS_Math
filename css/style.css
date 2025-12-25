@@ -84,11 +84,6 @@ main h2 div::before{
     content: '> ';
 }
 
-main h2 div:hover{
-    -webkit-transform: rotateX(360deg);
-    transform: rotateX(360deg);
-}
-
 main h3{
     color: aquamarine;
     border-bottom: 2px solid aquamarine;
@@ -382,6 +377,10 @@ iframe {
 .toggle-box input:checked ~ .longanswer {
   max-height: 2000px;
   padding: 10px;
+}
+
+.longanswer img{
+  max-width: 400px;
 }
 
 /*=================emphbox(青box)=================*/
