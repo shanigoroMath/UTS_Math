@@ -87,7 +87,7 @@
 
             <h2><div>解答例</div></h2>
 
-            <p>
+            <p>正三角形絡みの問題は様々な戦略がありますが、今回は対称性を鑑みて「中線の先に最後の点がある」と言う条件で立式しました。<br>傾きの条件は、「<span style="color: aqua;">$y=kx^2$上の2点を通る直線の傾きは$k(p+q)$</span>」という、高校入試ではおなじみの式を知っていると迷わず文字で置けるかと思います。
                 <div class="toggle-box">
                     <input type="checkbox" id="2004-1">
                     <label for="2004-1"
@@ -110,20 +110,118 @@
 
             <p>今回の問題は問題文中に変数が存在しない($a$は確定値)ので、「動かない図解」になります。</p>
 
-            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+            <iframe src="https://www.desmos.com/calculator/kbxgxfcmle?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
         </div>
 
         <div class="paragraph">
 
             <h2><div>問題の背景</div></h2>
 
+            <p>解答例でも述べたように、正三角形をなす必要十分条件は様々なものがあります。以下に有名なものを並べてみます。</p>
+
+            <div class="emphbox" style="background-color: rgb(40,0,0);">
+              <p style="color: yellow;">相異なる3点$A,B,C$が正三角形をなす<br>（※外心、重心、内心、垂心をそれぞれ$O,G,I,H$とする）</p>
+                <p style="line-height: 2.8em;">
+                  ⇔　$\angle ABC=\angle BCA=\angle CAB$ （<span style="color: aqua;">3角相等</span>）<br>
+                
+                  ⇔　$AB=BC=CA$ （<span style="color: aqua;">3辺相等</span>）<br>
+
+                  ⇔　$\overrightarrow{AB}$が$\overrightarrow{AC}$を<span style="color: aqua;">$\pm 60$°回転</span>させたベクトルである<br>
+
+                  ⇔　$\overrightarrow{AB}\cdot\overrightarrow{AC}=\frac12|\overrightarrow{AB}|^2=\frac12|\overrightarrow{AC}|^2$<br>
+
+                  ⇔　$M$を$AB$の中点としたとき、$\overrightarrow{MC}$は$\overrightarrow{AB}$に<span style="color: aqua;">垂直で、大きさが$\frac{\sqrt3}{2}$倍</span>である<br>
+
+                  ⇔　$\angle AOB=\angle BOC=\angle COA$ （外心からみて、<span style="color: aqua;">頂点が互いに120°</span>をなしている）<br>
+
+                  ⇔　$O,G,I,H$のうち<span style="color: aqua;">いずれかが一致</span>する<br>
+
+                  ⇔　内接円、外接円の半径をそれぞれ$r,R$としたとき、<span style="color: aqua;">$R=2r$</span>（オイラーの不等式の等号成立条件）
+                </p>
+              
+            </div>
+
+            <p>探せばまだまだありますが($|\triangle ABC|=\frac{\sqrt3}{4}\max{\{AB,BC,CA}\}^2$など)、いったんこの程度にしておきます。</p>
+
+            <p>私としては、$A,B,C$が座標で与えられるときは角度条件が忌避され、複素数で与えられるときは3辺相等or角度条件が刺さると思っています。</p>
+
+            <p>また、座標で3辺相等の式を立てると連立2次方程式になり計算量が増えがちなので、これも避けることが多いです。（一番確実に解ける保証はあるけども...）</p><br>
+
+            <p>このような使い分けは、実践を通して身につけていくものだと思うので、下の類題に是非挑戦してみてください。</p>
         </div>
 
         <div class="paragraph">
 
             <h2><div>類題紹介</div></h2>
 
-            <div class="emphbox"></div>
+            <div class="emphbox">点$(0,k)$を通る傾き1の直線が、中心$(0,1)$,半径1の円$C$と異なる2点$P,Q$で交わるとする。<br><br>線分$PQ$が円$C$に内接する正三角形の1辺となるとき、実数$k$の値を求めよ。<br><br>（南山大2011抜粋）<br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2004-1-p1">
+                <label for="2004-1-p1"
+                class="toggle-label">▶ ひとこと&答え</label>
+                <div class="toggle-content">   
+                    【長さ】$C$の中心と直線の距離が、$C$の半径の$\frac12$倍 $$答え：k=\frac{2\pm\sqrt2}{2}$$
+                </div>
+            </div></div><br>
+
+
+            <div class="emphbox">複素数平面上に3点$A(z),B(z^3),C(z^5)$がある。<br>$A,B,C$が正三角形の頂点になるとき、$z^2$の値を全て求めよ。<br><br>（名古屋工大2019抜粋）<br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2004-1-p4">
+                <label for="2004-1-p4"
+                class="toggle-label">▶ ひとこと&答え</label>
+                <div class="toggle-content">   
+                    【3辺相等】 辺の長さの条件を立て、因数分解して解く。ただし3点が相異なる必要があることに注意
+                    $$答え：z^2=-\frac12\pm\frac{\sqrt3}{2}i$$
+                </div>
+            </div></div><br>
+
+
+
+            <div class="emphbox">$xy$座標平面の2つの領域<br>
+$D_1:(x-3)^2+y^2\le 1,$<br>
+$D_2:x^2+(y-\sqrt{3})^2\le 1$<br>
+を考える。<br>
+<br>
+直線 $y=-x$ 上の点 $P(a,-a)$ に対して，次の条件を満たすような $a$ の範囲を求めよ。<br>
+<br>
+条件：領域 $D_1$ の点 $Q$ と領域 $D_2$ の点 $R$ で，3点 $P,Q,R$ が正三角形をなすものが存在する。<br><br>（東大模試）<br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2004-1-p2">
+                <label for="2004-1-p2"
+                class="toggle-label">▶ ひとこと&答え</label>
+                <div class="toggle-content">   
+                    【回転】$D_1$を$P$中心に60°回転させた円が$D_2$と共有点を持てばok $$答え：\frac{\sqrt3-\sqrt5}{2}\leqq a\leqq \frac{\sqrt3+\sqrt5}{2}$$
+                </div>
+            </div></div><br>
+
+            <div class="emphbox">複素数平面において，円周 $|z|=1$ 上の異なる3点 $z_1,z_2,z_3$ を考える。このとき，次の条件 $p$ と $q$ は同値であることを示せ。<br>
+<br>
+$p$：$z_1,z_2,z_3$ を頂点とする三角形が正三角形である　　$q$：$z_1+z_2+z_3=0$<br><br>（上智大2019）<br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2004-1-p3">
+                <label for="2004-1-p3"
+                class="toggle-label">▶ ひとこと&方針</label>
+                <div class="toggle-content">   
+                    【4心一致】 垂心と外心が一致しているから当然同値だが、これだけ答えてもマルはもらえなさそうなので、以下のように示す<br><br>
+                    (p⇒q)【外心からみた頂点】$z_1,z_2,z_3$を極座標で置き、和=0を示す<br>
+                    (q⇒p)【3辺相等】 $z_3$のみ移項して、両辺の絶対値を2乗。3点の距離が互いに等しいことを示す
+                </div>
+            </div></div><br>
+
+
+            
+            <div class="emphbox">$a$ を $1$ より大きい実数とし，$xy$ 平面上の曲線 $C_1:y=a^x$ および曲線 $C_2:y=\log_a x$ について考える。原点を $O$ とし，$C_1$ 上に点 $P$，$C_2$ 上に点 $Q$ をとる。このとき，以下の各問いに答えよ。<br><br>
+
+(1)　$O$ を通る傾き $k$ の直線が $C_1$ に接するとき，$a$ の値を $k$ を用いて表せ。また，接点の座標を $a$ を用いて表せ。<br><br>
+
+(2)　$O$ を通る直線が $C_2$ に接するとき，接点の座標を $a$ を用いて表せ。<br><br>
+
+(3)　$\triangle OPQ$ が正三角形となるような $P,Q$ の組の個数を，$a$ の値で場合分けして求めよ。<br><br>（科学大医療系2025）<br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2004-1-p5">
+                <label for="2004-1-p5"
+                class="toggle-label">▶ ひとこと&解答例(通常画像)</label>
+                <div class="toggle-content longanswer">   
+                    【回転】$C_1$を原点周りに$\pm$60°回転させ、$C_2$との交点の数を考える。しかし回転の様子がイメージしづらい、難問。<br><br>
+                    <img src="figure/20251204_010333.jpg" class="clickable-img" onclick="openImgModal(this.src)">
+                </div>
+            </div></div><br>
 
         </div>
 

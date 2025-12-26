@@ -202,6 +202,10 @@ iframe {
     transition: 0.2s;
 }
 
+.problemtable td:has(img.fi){
+    border: solid 5px #ffc20b;
+}
+
 /*=================工事中マーク=================*/
 
 .problemtable a:not(:has(img.fi)) img {
@@ -380,7 +384,7 @@ iframe {
 }
 
 .longanswer img{
-  max-width: 400px;
+  max-width: 400px!important;
 }
 
 /*=================emphbox(青box)=================*/
