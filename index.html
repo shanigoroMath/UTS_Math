@@ -92,7 +92,7 @@
             
 
             <div class="emphbox">
-                <p>東大理系数学のあれこれを調べ上げて、まとめページを作ってみました。</p>
+                <p>良問の宝庫：東大理系数学のあれこれを調べ上げて、まとめページを作ってみました。</p>
 
                 <p>問題の難易度や得点戦略よりも、<span style="font-weight: bold;">背景の深掘りや類題研究</span>等を重視したいと思っています。そのため、問題そのものの解答は略解のみ、もしくは省略とさせていただく事が多いです。（そもそも他のサイトで少し探せば解説はすぐ見つかるので...。）</p><br>
 
@@ -100,6 +100,11 @@
 
                 <p style="color: yellow;">★内容に関する問い合わせ、改善案、類題提供などありましたら、主のTwitter（<a href="https://x.com/NABLA_DEL">https://x.com/NABLA_DEL</a>）へお寄せください！★</p>
             </div>
+
+            <div id="countdown">
+              カウントダウンを読み込み中…
+            </div>
+
 
             <section id="bookmarks">
                 <h3>ブックマークした記事</h3>
@@ -115,6 +120,9 @@
 
             
 
+            <p class="problemtable-exp">←左右にスクロールできます→</p>
+            <div class="shadowbox"><div id="problemtable-shadow1"></div></div>
+            <div class="shadowbox"><div id="problemtable-shadow2"></div></div>
             <div class="problemtable-container">
             <table class="problemtable">
                 <tr id="pthead">
@@ -138,7 +146,7 @@
                     <td><a href="pages/2024_2.html"><img src="pages/td/スライド8.JPG" alt="2024-2"></a></td>
                     <td><a href="pages/2024_3.html"><img src="pages/td/スライド9.JPG" alt="2024-3"></a></td>
                     <td><a href="pages/2024_4.html"><img src="pages/td/スライド10.JPG" alt="2024-4"></a></td>
-                    <td><a href="pages/2024_5.html"><img class="fi new" src="pages/td/スライド11.JPG" alt="2024-5"></a></td>
+                    <td><a href="pages/2024_5.html"><img class="fi" src="pages/td/スライド11.JPG" alt="2024-5"></a></td>
                     <td><a href="pages/2024_6.html"><img src="pages/td/スライド12.JPG" alt="2024-6"></a></td>
                 </tr>
                 <tr>
@@ -425,7 +433,7 @@
 
 
 <script>
-/* diff データ（ユーザー提供の最新版） */
+/* diff データ */
 const diffTable = {
   2025: ["B","C","C","C","D","C"],
   2024: ["B","B","C","B","C","D"],
@@ -638,6 +646,36 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
+<script>
+  // ★ここでカウントダウンしたい日時を指定
+  const targetDate = new Date("2026-02-25T14:00:00+09:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    const countdownElem = document.getElementById("countdown");
+
+    if (diff <= 0) {
+      countdownElem.textContent = "★東大理系数学2026は開始済みです★";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+    const minutes = Math.floor(diff / (1000 * 60)) % 60;
+    const seconds = Math.floor(diff / 1000) % 60;
+
+    countdownElem.textContent =
+      `★東大数学2026開始まであと ${days}日 ${hours}時間 ${minutes}分 ${seconds}秒★`;
+  }
+
+  // 初回実行
+  updateCountdown();
+  // 1秒ごとに更新
+  setInterval(updateCountdown, 1000);
+</script>
 
 
 

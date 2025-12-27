@@ -163,6 +163,7 @@ iframe {
 
 .problemtable-container{
     overflow-x: auto;
+    min-height: 1em;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -205,6 +206,39 @@ iframe {
 .problemtable td:has(img.fi){
     border: solid 5px #ffc20b;
 }
+
+.problemtable-exp{
+  text-align: center;
+  opacity: 0;
+}
+
+.shadowbox{
+  height: 1px;
+}
+
+@media (max-width: 1200px) {
+    .problemtable-exp{
+      opacity: 1;
+    }
+    #problemtable-shadow1{
+      height: 2339px;
+      width: 5%;
+      left: 95%;
+      position: relative;
+      background: linear-gradient(to left,rgb(0, 0, 1,0.7),rgba(0,0,0,0));
+      z-index: 998;
+      pointer-events: none;
+    }
+    #problemtable-shadow2{
+      height: 2339px;
+      width: 5%;
+      position: relative;
+      background: linear-gradient(to right,rgb(0, 0, 1,0.7),rgba(0,0,0,0));
+      z-index: 998;
+      pointer-events: none;
+    }
+}
+
 
 /*=================工事中マーク=================*/
 
@@ -669,4 +703,18 @@ iframe {
 
 #bookmark-list li::before {
   content: "■ ";
+}
+
+
+/*=================カウントダウンタイマー=================*/
+
+#countdown{
+  margin-top: 1em;
+  padding: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: yellow;
+  border: solid 2px #ffffff;
+  background-color: #191c43;
+  border-radius: 6px;
 }
