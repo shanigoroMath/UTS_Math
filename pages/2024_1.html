@@ -87,7 +87,15 @@
             <h2><div>東大理系数学 2024-1</div></h2>
 
             <div class="emphbox">
-                <p></p>
+                <p>座標空間内の点 $A(0,-1,1)$ をとる。$xy$ 平面上の点 $P$ が次の条件 (i)，(ii)，(iii) をすべて満たすとする。<br>
+<br>
+(i) $P$ は原点 $O$ と異なる。<br>
+<br>
+(ii) $\angle AOP \ge \dfrac{2}{3}\pi$<br>
+<br>
+(iii) $\angle OAP \le \dfrac{\pi}{6}$<br>
+<br>
+$P$ がとりうる範囲を $xy$ 平面上に図示せよ。</p>
             </div>
 
         </div>
@@ -96,13 +104,15 @@
 
             <h2><div>方針、略解</div></h2>
 
-            <p>(1)
+            <p>実は概形だけなら解く前から分かる。（後述参照）<br>
+              とはいえ結局は(i)～(iii)を$x,y$の条件に同値変形することになる。
                 <div class="toggle-box">
                     <input type="checkbox" id="2024-1">
                     <label for="2024-1"
                     class="toggle-label">▶ 答え</label>
-                    <div class="toggle-content">   
-                        $$$$
+                    <div class="toggle-content">
+                        以下の条件を図示すれば良い。
+                        $$\begin{cases}x^2+\frac{(y-1)^2}{3}\leqq1\\y\geqq|x|\\(x,y)\neq(0,0)\end{cases}$$
                     </div>
                 </div>
             </p>
@@ -112,13 +122,22 @@
         <div class="paragraph">
 
             <h2><div>動く図解</div></h2>
+            
+            <p style="font-size: 0.8em;">(gif画像です。画質はご愛敬。どうしても直接見たいのなら
+            、こちらから：<a href="https://www.desmos.com/3d/8vc5qevlia">https://www.desmos.com/3d/8vc5qevlia</a>)</p>
 
-            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+            <img src="figure/無題のビデオ ‐ Clipchampで作成 (2).gif" width="250px"><br>
         </div>
 
         <div class="paragraph">
 
             <h2><div>問題の背景</div></h2>
+
+            <p>実は、東大は(純粋な意味における)「初等幾何」、つまり数Aの図形分野を2001-1を最後にして20年以上全く出題していません。</p>
+
+            <p>しかし、複素数の等式の解釈に円周角の定理を使わせたり、いわゆる「等積変形」を積分で用いたり、あるいは図形とベクトルを絡めて出題されたりと、初等幾何をテーマではなく道具として出題する例が数多くあります。</p>
+
+            <p>そして本問もまた、「幾何的解釈」が役に立つ一問でした。今回利用できる幾何の知識は、「円錐曲線」です。</p>
 
         </div>
 
