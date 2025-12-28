@@ -96,7 +96,7 @@
 
                 <p>問題の難易度や得点戦略よりも、<span style="font-weight: bold;">背景の深掘りや類題研究</span>等を重視したいと思っています。そのため、問題そのものの解答は略解のみ、もしくは省略とさせていただく事が多いです。（そもそも他のサイトで少し探せば解説はすぐ見つかるので...。）</p>
 
-                <p>過去問を解いた後の解説の端っこに書いてある「コラム」を読む感覚で使っていただければ幸いです。</p><br>
+                <p>過去問の解説とかの端っこに書いてある「コラム」を読む感覚で使っていただければ幸いです。</p><br>
 
                 <p style="font-size: 0.8em;">未着手の記事は半透明化&無効化してあります。<br>また、難易度は「大学への数学」による評価を参照しています。そのため、「当時の受験生にとっての難易度」であることに注意してください</p><br>
 
@@ -105,20 +105,33 @@
 
             <div id="countdown">
               カウントダウンを読み込み中…
-            </div>
+            </div><br>
 
 
-            <section id="bookmarks">
-                <h3>ブックマークした記事</h3>
+            <div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="bookmark-toggle">
+                <label for="bookmark-toggle"
+                class="toggle-label">▶ ブックマークした記事(タップで展開)</label>
+                <div class="toggle-content" style="background-color: #0c201d;text-align: left;">
 
                 <ul id="bookmark-list"></ul>
 
-                <p id="bookmark-empty" style="display:none;">
+                <p id="bookmark-empty" style="display:none;color: #FFF;">
                 まだブックマークはありません。
                 </p>
-            </section><br>
+                </div>
+            </div><br>
 
+            <div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="update_log">
+                <label for="update_log"
+                class="toggle-label">▶ 更新ログ(タップで展開)</label>
+                <div class="toggle-content" style="background-color: #0c201d;text-align: left;color: #FFF;">   
+                      <p>2025/12/28　：　<a href="pages/2024_1.html">2024-1解説</a>投稿</p>
 
+                      <p>2025/12/27　：　<a href="pages/2004_1.html">2004-1解説</a>投稿</p>
+                </div>
+            </div>
 
             
 
@@ -144,7 +157,7 @@
                 <tr>
                     <th>2024<br><span style="font-size: 0.5em;">計算重め</span></th>
                     <td></td>
-                    <td><a href="pages/2024_1.html"><img src="pages/td/スライド7.JPG" alt="2024-1"></a></td>
+                    <td><a href="pages/2024_1.html"><img class="fi new" src="pages/td/スライド7.JPG" alt="2024-1"></a></td>
                     <td><a href="pages/2024_2.html"><img src="pages/td/スライド8.JPG" alt="2024-2"></a></td>
                     <td><a href="pages/2024_3.html"><img src="pages/td/スライド9.JPG" alt="2024-3"></a></td>
                     <td><a href="pages/2024_4.html"><img src="pages/td/スライド10.JPG" alt="2024-4"></a></td>

@@ -694,18 +694,15 @@ iframe {
 #bookmark-list {
   list-style: none;
   padding: 0;
-  border: solid #FFF 2px;
 }
 
 #bookmark-list li {
   margin: 0;
-  border: solid #FFF 2px;
-  padding: 1em 1em;
-  background-color: #101e1a;
 }
 
 #bookmark-list li::before {
   content: "■ ";
+  color: #ffc20b;
 }
 
 
