@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2011年東大理系数学第4問</title>
+    <title>このサイトについて|東大理系数学の解剖</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../favicon.ico">
     
@@ -48,7 +48,7 @@
 </head>
 
 
-<body data-problem="2011-4"  id="top">
+<body id="top">
 
 
     <!------------------ヘッダ------------------>
@@ -79,56 +79,29 @@
         
         <a class="gouts" href="../index.html"></a>
 
-<div class="bookmark-box">
-  <button id="bookmark-btn">□</button>
-  <span id="bookmark-count">ブックマーク</span>
-</div>
         <div class="paragraph">
             
-            <h2><div>東大理系数学 2011-4</div></h2>
+            <h2><div>サイト理念</div></h2>
 
-            <div class="emphbox">
-                <p>座標平面上の1点 $P\left(\frac12,\ \frac14\right)$ をとる。放物線 $y=x^2$ 上の2点
-$Q(\alpha,\ \alpha^2)$，$R(\beta,\ \beta^2)$ を，3点 $P,\ Q,\ R$ が $QR$ を底辺とする二等辺三角形をなすように動かすとき，$\triangle PQR$ の重心 $G(X,\ Y)$ の軌跡を求めよ。</p>
-            </div>
+
+        </div>
+
+
+        <div class="paragraph">
+
+            <h2><div>解答例について</div></h2>
 
         </div>
 
         <div class="paragraph">
 
-            <h2><div>方針、略解</div></h2>
-
-            <p>
-                <div class="toggle-box">
-                    <input type="checkbox" id="2011-4">
-                    <label for="2011-4"
-                    class="toggle-label">▶ 解答例(スキャン画像)(タップで拡大)</label>
-                    <div class="toggle-content longanswer">
-                      <img src="figure/20251213_222627.jpg" class="clickable-img" onclick="openImgModal(this.src)">
-                    </div>
-                </div>
-            </p>
+            <h2><div>類題について</div></h2>
 
         </div>
 
         <div class="paragraph">
 
-            <h2><div>動く図解</div></h2>
-
-            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
-        </div>
-
-        <div class="paragraph">
-
-            <h2><div>問題の背景</div></h2>
-
-        </div>
-
-        <div class="paragraph">
-
-            <h2><div>類題紹介</div></h2>
-
-            <div class="emphbox"></div>
+            <h2><div>その他</div></h2>
 
         </div>
 
@@ -236,57 +209,6 @@ window.addEventListener('scroll', () => {
 
 
 
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const key = "bookmark-" + location.pathname;
-
-  const btn = document.getElementById("bookmark-btn");
-  const count = document.getElementById("bookmark-count");
-
-  if (!btn || !count) return;
-
-  let bookmarked = false;
-
-  const raw = localStorage.getItem(key);
-  if (raw) {
-    try {
-      const data = JSON.parse(raw);
-      bookmarked = !!data.bookmarked;
-    } catch {}
-  }
-
-  update();
-
-  btn.addEventListener("click", () => {
-    bookmarked = !bookmarked;
-
-    localStorage.setItem(
-      key,
-      JSON.stringify({
-        bookmarked: bookmarked,
-        title: document.title
-      })
-    );
-
-    update();
-  });
-
-  function update() {
-    if (bookmarked) {
-      btn.classList.add("bookmarked");
-      btn.textContent = "■";
-      count.textContent = "ブックマーク済み";
-    } else {
-      btn.classList.remove("bookmarked");
-      btn.textContent = "□";
-      count.textContent = "ブックマーク";
-    }
-  }
-
-});
-</script>
 
 
 
