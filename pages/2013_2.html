@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2013年東大理系数学第2問</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YC89KNZML0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YC89KNZML0');
+</script>
+
+
+</head>
+
+
+<body data-problem="2013-2"  id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2013-2</div></h2>
+
+            <div class="emphbox">
+                <p>$a$ を実数とし，$x>0$ で定義された関数 $f(x),g(x)$ を次のように定める。<br>
+<br>
+$f(x)=\dfrac{\cos x}{x}$<br>
+<br>
+$g(x)=\sin x+ax$<br>
+<br>
+このとき $y=f(x)$ のグラフと $y=g(x)$ のグラフが $x>0$ において共有点をちょうど3つもつような $a$ をすべて求めよ。</p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>方針、略解</div></h2>
+
+            <p>$a$ について解ける形をしているので、定数分離を行う。<br>
+              式の見た目に反し、微分後は綺麗になる。（本問は関係ないが、逆に言えば【微分後の式】の不定積分が解けるというのは、少し興味深いかもしれない）<br>
+              まずは定数分離に気づけるかどうか、そして微分を正確に実行できるかどうかが分かれ道になりそう。（その後は一本道）
+                <div class="toggle-box">
+                    <input type="checkbox" id="2013-2">
+                    <label for="2013-2"
+                    class="toggle-label">▶ 解答例(スキャン画像)(タップで拡大)</label>
+                    <div class="toggle-content longanswer">
+                        <img src="figure/Screenshot_20251208_092315_Chrome.jpg" class="clickable-img" onclick="openImgModal(this.src)">
+                    </div>
+                </div><br>
+                ＞ 所々日本語が怪しいですが、目をつむってください...。
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>動く図解</div></h2>
+
+            <p>実際問題文を直訳してグラフを描くと前者のようになるが、非直感的で分かりづらい。だからこそ、定数分離が必要になる。</p>
+            
+            <iframe src="https://www.desmos.com/calculator/2s9rlzrdut?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+            <iframe src="https://www.desmos.com/calculator/rzad4afo5g?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe><br>
+            （※後者の「解の個数」については、境界条件の実装が面倒だったので、$a=-\frac{2}{5\pi}$ とかにしても解は3個にならなくなっています）
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+            <p>「解の個数」系の問題は典型問題としてほぼ研究し尽くされているように感じます。一般的な大学入試における問題はほぼ既出のことが多く、新規性を持った出題はなかなか見かけません。そんな中でも東大は少しひねりを入れた問題を作っていて、これもその一つです。微分形が綺麗になるが元の関数は少し複雑という、少々珍しい関数を見つけて問題に転化させた作問者さん、かなりすごいと思います...。</p>
+
+
+            <p>今回は、「グラフより」の許容範囲について考察しようと思います。</p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <div class="emphbox"></div>
+
+        </div>
+
+        <a class="gouts" href="../index.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+const nav = document.getElementById("side-nav");
+const toggle = document.getElementById("side-toggle");
+const close = document.getElementById("side-close");
+const overlay = document.getElementById("side-overlay");
+
+toggle.onclick = () => {
+  nav.classList.toggle("open");
+  overlay.classList.toggle("show");
+};
+
+close.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+// 背景クリックで閉じる
+overlay.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+});
+</script>
+
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
+});
+</script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
+
+
+<script>
+function openImgModal(src) {
+  const modal = document.getElementById("img-modal");
+  const modalImg = document.getElementById("img-modal-content");
+  modalImg.src = src;
+  modal.style.display = "block";
+}
+
+function closeImgModal() {
+  document.getElementById("img-modal").style.display = "none";
+}
+</script>
+
+
+
+
+<div id="img-modal" onclick="closeImgModal()">
+  <img id="img-modal-content">
+</div>
+
+</body>
+<div id="side-overlay"></div>
+
+
+</html>
