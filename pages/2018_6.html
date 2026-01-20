@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2018年東大理系数学第6問</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YC89KNZML0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YC89KNZML0');
+</script>
+
+
+</head>
+
+
+<body data-problem="2018-6" id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2018-6</div></h2>
+
+            <div class="emphbox">
+                <p>座標空間内の4点 $O(0,0,0),A(1,0,0),B(1,1,0),C(1,1,1)$ を考える。$\dfrac{1}{2} < r < 1$ とする。点 $P$ が線分 $OA,AB,BC$ 上を動くときに点 $P$ を中心とする半径 $r$ の球（内部を含む）が通過する部分を，それぞれ $V_1,V_2,V_3$ とする。<br>
+<br>
+(1)　平面 $y=t$ が $V_1,V_3$ 双方と共有点をもつような $t$ の範囲を与えよ。さらに，この範囲の $t$ に対し，平面 $y=t$ と $V_1$ の共通部分および平面 $y=t$ と $V_3$ の共通部分を同一平面上に図示せよ。<br>
+<br>
+(2)　$V_1$ と $V_3$ の共通部分が $V_2$ に含まれるための $r$ についての条件を求めよ。<br>
+<br>
+(3)　$r$ は (2) の条件を満たすとする。$V_1$ の体積を $S$ とし，$V_1$ と $V_2$ の共通部分の体積を $T$ とする。$V_1,V_2,V_3$ を合わせて得られる立体 $V$ の体積を $S$ と $T$ を用いて表せ。<br>
+<br>
+(4)　ひきつづき $r$ は (2) の条件を満たすとする。$S$ と $T$ を求め，$V$ の体積を決定せよ。</p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>方針、略解</div></h2>
+
+            <p>(1)
+                <div class="toggle-box">
+                    <input type="checkbox" id="2025--">
+                    <label for="2025--"
+                    class="toggle-label">▶ 解答例(スキャン画像)(タップで拡大)</label>
+                    <div class="toggle-content longanswer">
+                        <img src="" class="clickable-img" onclick="openImgModal(this.src)">
+                    </div>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>動く図解</div></h2>
+
+            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+            <p>状況把握が難しい求積の問題です。おそらくこの問題の一番ネックな部分は(3)です。丁寧に図を描いてから「まず $V_1$ から $V_3$ まで全部足して、重なった部分を引いて...」と処理することも出来なくはないですが、相当のセンスを要するでしょう。<br><br>これは私の個人的な好みでもありますが、<span class="ora">応用性が高く、かつ自然で合理的な解法</span>を紹介しておいた方がタメになると思います。（青木先生の影響かも）</p>
+
+            <p>そこで今回は <span class="ora">$V_1\cup V_2 \cup V_3$</span> という構造からも想起される「あの」原理についての話をします。</p>
+
+            <h3>重なりのあるモノの大きさを測るには?</h3>
+
+            <p>モノ（数学的には集合）がいくつかあるのを想像してみましょう。それは図形や立体（点の集合）だったり、何らかの確率で起こる事象だったり、数列だったり、順列や組合せだったりもします。このときこんな質問をします。</p>
+
+            <p class="yel">「全てのモノからカブリのないように中身を集めたら、大きさ(※)はいくつになる？」</p>
+
+            <p>図形であれば、(※)は和集合の面積／体積のことを言っています。同様に事象であれば和事象の確率、数列や順列であれば個数のことであるのはなんとなくイメージできるでしょう。これらは全て、何らかの意味において「大きさ」を表しています。</p>
+
+            <p>仮に重なりがなければ、どの例においてもそれぞれの「大きさ」を足せばそれで終わりです。（確率とかだと排反と呼びますね）</p>
+
+            <p>しかし多くの場合、モノとモノは共通部分を持ちます。（円柱が交差していたり、数列に同じ項があったり、事象が排反でなかったり...）そんなとき、「一度足してから共通部分を引く」という方法は数多く目にしたことがあるでしょう。これを拡張したものが、本問でも登場した<span class="ora">包除原理</span>です。</p>
+
+
+
+
+
+            
+            <div class="emphbox">
+              <p>包除原理：</p>
+              $$\begin{align}|A\cup B| \ = \ &|A|+|B|-{\color{yellow}\boldsymbol{|A\cap B|}}\\\\|A\cup B\cup C| \ = \ &|A|+|B|+|C|\\&-{\color{yellow}\boldsymbol{|A\cap B|}}-{\color{yellow}\boldsymbol{|B\cap C|}}-{\color{yellow}\boldsymbol{|C\cap A|}}\\&\qquad+{\color{cyan}\boldsymbol{|A\cap B\cap C|}}\end{align}$$
+
+              <div class="toggle-box">
+                    <input type="checkbox" id="2018-gen">
+                    <label for="2018-gen"
+                    class="toggle-label">▶ 一般化</label>
+                    <div class="toggle-content"> $$|A_1\cup\cdots\cup A_k|=\sum_{i=1}^k(-1)^{i+1}\sum_{1\leqq j_1 < \cdots < j_i\leqq k}|A_{j_1}\cap\cdots\cap A_{j_i}|$$ </div>
+                      
+              </div>
+              
+            </div>
+
+
+
+            
+
+            <p>包除原理は、いかなる概念であっても、それが「モノ」である限りは必ず適用できます。そのため、「カブリ」を持つ概念が出てきてよく分からなくなったら、包除原理が頼れるかもしれません。是非類題等で試してみてください！<p>
+
+            <div class="toggle-box">
+                    <input type="checkbox" id="2018-hoi">
+                    <label for="2018-hoi"
+                    class="toggle-label">▶ 補遺</label>
+                    <div class="toggle-content">
+                      <p>あまり数学自体とは関係ない話になりますが、この原理の強いところは「何も考えなくていい」ところです。実際本問の解答も式を書き下して計算しただけです。試験等で頭が真っ白になっても、これを書けば勝手に計算が進みます。</p>
+                    </div>
+                </div>
+              </div>
+          
+        </div>
+
+           
+            
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <div class="emphbox"></div>
+
+        </div>
+
+        <a class="gouts" href="../index.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+const nav = document.getElementById("side-nav");
+const toggle = document.getElementById("side-toggle");
+const close = document.getElementById("side-close");
+const overlay = document.getElementById("side-overlay");
+
+toggle.onclick = () => {
+  nav.classList.toggle("open");
+  overlay.classList.toggle("show");
+};
+
+close.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+// 背景クリックで閉じる
+overlay.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+});
+</script>
+
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
+});
+</script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
+
+
+<script>
+function openImgModal(src) {
+  const modal = document.getElementById("img-modal");
+  const modalImg = document.getElementById("img-modal-content");
+  modalImg.src = src;
+  modal.style.display = "block";
+}
+
+function closeImgModal() {
+  document.getElementById("img-modal").style.display = "none";
+}
+</script>
+
+
+
+
+<div id="img-modal" onclick="closeImgModal()">
+  <img id="img-modal-content">
+</div>
+
+</body>
+<div id="side-overlay"></div>
+
+
+</html>

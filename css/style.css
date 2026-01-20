@@ -55,6 +55,15 @@ a:active{
     text-decoration: underline;
 }
 
+.ora{
+  color: orange;
+}
+
+.yel{
+  font-weight: bold;
+  color: yellow;
+}
+
 
 /* ==============================================
    main一律
