@@ -727,3 +727,12 @@ iframe {
   background-color: #191c43;
   border-radius: 6px;
 }
+
+
+/*=================オススメ解説=================*/
+
+#feature{
+  color: aquamarine;
+  font-weight: bold;
+  font-size: 1.3em;
+}
