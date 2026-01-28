@@ -105,15 +105,20 @@
 
             <h2><div>方針、略解</div></h2>
 
-            <p>(1)
+            <p>(1)球状のバターをフライパン上で滑らせながら溶かしているイメージです。<br>
+              (2)最遠点が条件を満たすことが必要十分になります。<br>
+              (3)あの原理を使いましょう。<br>
+              (4)シンプルな求積に帰着されたので、定石通り断面を積分。
                 <div class="toggle-box">
                     <input type="checkbox" id="2025--">
                     <label for="2025--"
                     class="toggle-label">▶ 解答例(スキャン画像)(タップで拡大)</label>
                     <div class="toggle-content longanswer">
-                        <img src="" class="clickable-img" onclick="openImgModal(this.src)">
+                        <img src="figure/20260121_111655.jpg" class="clickable-img" onclick="openImgModal(this.src)">
                     </div>
                 </div>
+                <p>＞(1)の図示について：本当は2通りありますが、これだけ描けば十分だと思います。(T進の採点基準もこれで満点となっていました)</p>
+                <p>＞全体的に今回の解答例は「行間多め」です。</p>
             </p>
 
         </div>
@@ -122,16 +127,17 @@
 
             <h2><div>動く図解</div></h2>
 
-            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+            
+            <img src="figure/スクリーンショット 2026-01-21 142528.png" width="160px">
+            <img src="figure/無題のビデオ ‐ Clipchampで作成.gif" width="250px">
+            <img src="figure/20186.gif" width="250px">
         </div>
 
         <div class="paragraph">
 
             <h2><div>問題の背景</div></h2>
 
-            <p>状況把握が難しい求積の問題です。おそらくこの問題の一番ネックな部分は(3)です。丁寧に図を描いてから「まず $V_1$ から $V_3$ まで全部足して、重なった部分を引いて...」と処理することも出来なくはないですが、相当のセンスを要するでしょう。<br><br>これは私の個人的な好みでもありますが、<span class="ora">応用性が高く、かつ自然で合理的な解法</span>を紹介しておいた方がタメになると思います。（青木先生の影響かも）</p>
-
-            <p>そこで今回は <span class="ora">$V_1\cup V_2 \cup V_3$</span> という構造からも想起される「あの」原理についての話をします。</p>
+            <p>状況把握が難しい求積の問題です。おそらくこの問題の一番ネックな部分は(3)です。丁寧に図を描いてから重なる部分を想像しつつ処理することも出来なくはないですが、相当のセンスを要するでしょう。<br><br>これは私の個人的な好みでもありますが、<span class="ora">応用性が高く、かつ自然で合理的な解法</span>を紹介しておいた方がタメになると思っているので、今回は <span class="ora">$V_1\cup V_2 \cup V_3$</span> という構造からも想起される「あの」原理についての話をします。</p>
 
             <h3>重なりのあるモノの大きさを測るには?</h3>
 
@@ -143,7 +149,7 @@
 
             <p>仮に重なりがなければ、どの例においてもそれぞれの「大きさ」を足せばそれで終わりです。（確率とかだと排反と呼びますね）</p>
 
-            <p>しかし多くの場合、モノとモノは共通部分を持ちます。（円柱が交差していたり、数列に同じ項があったり、事象が排反でなかったり...）そんなとき、「一度足してから共通部分を引く」という方法は数多く目にしたことがあるでしょう。これを拡張したものが、本問でも登場した<span class="ora">包除原理</span>です。</p>
+            <p>しかし多くの場合、モノとモノは共通部分を持ちます。（円柱が交差していたり、数列に同じ項があったり、事象が排反でなかったり...）そんなとき、「一度足してから共通部分を引く」という方法は数多く目にしたことがあるでしょう。これを定式化したものが、本問でも登場した<span class="ora">包除原理</span>です。ベン図を利用して視覚化すると理解が深まると思うので、自分で描いてみることをオススメします。<br>（本問において $|V_3\cap V_1|$ と $|V_1\cap V_2\cap V_3|$ が打ち消しあった理由も明らかになります！）</p>
 
 
 
@@ -157,8 +163,15 @@
               <div class="toggle-box">
                     <input type="checkbox" id="2018-gen">
                     <label for="2018-gen"
-                    class="toggle-label">▶ 一般化</label>
-                    <div class="toggle-content"> $$|A_1\cup\cdots\cup A_k|=\sum_{i=1}^k(-1)^{i+1}\sum_{1\leqq j_1 < \cdots < j_i\leqq k}|A_{j_1}\cap\cdots\cap A_{j_i}|$$ </div>
+                    class="toggle-label">▶ オマケ：一般化</label>
+                    <div class="toggle-content"> $$|A_1\cup\cdots\cup A_k|=\sum_{i=1}^k(-1)^{i+1}\sum_{1\leqq j_1 < \cdots < j_i\leqq k}|A_{j_1}\cap\cdots\cap A_{j_i}|$$
+
+                      <p style="text-align:left;">実際に $k=4$ で書き出してみると、解と係数の関係に似た構造を持つことが分かります。 <br>
+
+                      $$\begin{align}|A\cup B\cup C\cup D| \ = \ &|A|+|B|+|C|+|D|\qquad\cdots\qquad(3次の項の係数)\\&-{\color{blue}\boldsymbol{|A\cap B|}}-{\color{blue}\boldsymbol{|A\cap C|}}-{\color{blue}\boldsymbol{|A\cap D|}}-{\color{blue}\boldsymbol{|B\cap C|}}-{\color{blue}\boldsymbol{|B\cap D|}}-{\color{blue}\boldsymbol{|C\cap D|}}\qquad\cdots\qquad(2次の項の係数)\\&\qquad+{\color{red}\boldsymbol{|A\cap B\cap C|}}+{\color{red}\boldsymbol{|A\cap B\cap D|}}+{\color{red}\boldsymbol{|A\cap C\cap D|}}+{\color{red}\boldsymbol{|B\cap C\cap D|}}\qquad\cdots\qquad(1次の項の係数)\\&\qquad\qquad-{\color{purple}\boldsymbol{|A\cap B\cap C\cap D|}}\qquad\cdots\qquad(定数項)\end{align}$$
+
+                      </p>
+                      </div>
                       
               </div>
               
@@ -170,15 +183,7 @@
 
             <p>包除原理は、いかなる概念であっても、それが「モノ」である限りは必ず適用できます。そのため、「カブリ」を持つ概念が出てきてよく分からなくなったら、包除原理が頼れるかもしれません。是非類題等で試してみてください！<p>
 
-            <div class="toggle-box">
-                    <input type="checkbox" id="2018-hoi">
-                    <label for="2018-hoi"
-                    class="toggle-label">▶ 補遺</label>
-                    <div class="toggle-content">
-                      <p>あまり数学自体とは関係ない話になりますが、この原理の強いところは「何も考えなくていい」ところです。実際本問の解答も式を書き下して計算しただけです。試験等で頭が真っ白になっても、これを書けば勝手に計算が進みます。</p>
-                    </div>
-                </div>
-              </div>
+            
           
         </div>
 
@@ -189,7 +194,82 @@
 
             <h2><div>類題紹介</div></h2>
 
-            <div class="emphbox"></div>
+            <div class="emphbox">
+              <p>実数 $a,b,c$ に対し、関数 $f(a,b,c)=2a-bc-1$ を考える。</p>
+              <p>ここで、実数 $x,y,z$ に関する条件 $A,B,C,P$ を次のように定める。</p>
+              <p>$$\begin{cases}A:f(x,y,z)\geqq0\\B:f(y,z,x)\geqq0\\C:f(z,x,y)\geqq0\\P:x+y+z\leqq\frac12\end{cases}$$</p>
+              <p>以下の条件を満たす座標空間上の点 $(x,y,z)$ の動きうる範囲 $W$ の体積を求めよ。</p>
+              <p>（条件）： $x,y,z$ はいずれも0以上1以下であり、「 $A$ または $B$ または $C$ または $P$ 」を満たす</p><br>（東大模試　改）
+              <br><br>
+              <div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2018-6-q">
+                <label for="2018-6-q"
+                class="toggle-label">▶ ひとこと</label>
+                <div class="toggle-content longanswer" style="text-align: left;">   
+                  <p>包除原理を知らなかった場合、途方もない断面積分に頼るしかなかったであろう。<br>
+                  しかし包除原理を適用するだけで、非常に単純な積分に帰着される。<br>
+                  先述の「オマケ」の通り、解と係数の関係を意識しながら書くと明快。</p>
+
+                  <p>$$\begin{align}|A\cup B\cup C\cup P| \ = \ &|A|+|B|+|C|+|P|\\&-{\color{blue}\boldsymbol{|A\cap B|}}-{\color{blue}\boldsymbol{|A\cap C|}}-{\color{purple}\boldsymbol{|A\cap P|}}-{\color{blue}\boldsymbol{|B\cap C|}}-{\color{purple}\boldsymbol{|B\cap P|}}-{\color{purple}\boldsymbol{|C\cap P|}}\\&\qquad+{\color{red}\boldsymbol{|A\cap B\cap C|}}+{\color{green}\boldsymbol{|A\cap B\cap P|}}+{\color{green}\boldsymbol{|A\cap C\cap P|}}+{\color{green}\boldsymbol{|B\cap C\cap P|}}\\&\qquad\qquad-{\color{brown}\boldsymbol{|A\cap B\cap C\cap P|}}\\ = \ &3|A|+|P|-{\color{blue}3|A\cap B|}-{\color{purple}3|A\cap P|+{\color{green}3|A\cap B\cap P|}}+{\color{red}|A\cap B\cap C\cap \overline{P}|}\\ = \ &3|A\cap \overline{P}|-3|A\cap B\cap \overline{P}|+|P|+|A\cap B\cap C\cap \overline{P}|\end{align}$$</p>
+
+                  <p>あとはそれぞれの項について $z=t$ での断面を考えれば、</p>
+                  <p>$$|A\cup B\cup C\cup P|=3|A\cap \overline{B}|+|P|$$</p>
+                  <p>ここまで簡単になる。</p>
+                </div>
+            </div>
+              </div><br>
+            
+            <div class="emphbox">$(1,2,3,\cdots,n)$ を並び替えて出来る数列$(c_1,c_2,c_3,\cdots,c_n)$ について、$1$以上$n$以下の任意の整数$i$に対し$c_i\neq i$ が成り立つようなものの個数を$D_n$とする。言い換えれば、次の条件を満たす数列の個数が $D_n$ である。<br><br>
+            <p>（条件）： $(1,\cdots,n)$ の並び替えであって、「 $c_1\neq1$ かつ $c_2\neq2$かつ　$\cdots$　かつ$c_n\neq n$ 」が成り立つ</p>
+            <p>このとき、 $D_n$ が次のように表せることを示せ。</p>
+            <p>$$D_n=n!\sum_{k=0}^n\frac{(-1)^k}{k!}$$</p><br>(有名問題、完全順列)
+          
+              <br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2018-6-p">
+                <label for="2018-6-p"
+                class="toggle-label">▶ 初手</label>
+                <div class="toggle-content">   
+                  補集合を考えることで「または」を登場させ、包除原理に持ち込む。
+                </div>
+            </div></div><br>
+
+            
+            <div class="emphbox">
+              <p>(1) 区別のある $n$ 個の玉を、区別のある3個の箱に収納する。下の条件を満たすような入れ方は何通りあるか求めよ。</p>
+              <p>（条件）： 3つの箱のいずれも一つ以上玉が入っている。<br>すなわち、「1つ目が空き箱でない」かつ「2つ目が空き箱でない」かつ「3つ目が空き箱でない」ということ。</p>
+              <p>(2) (1)を一般化して、箱の数を $k$ 個とする。（もちろん、これらの箱も区別がある。）<br>同様の条件を満たす入れ方を $R(n,k)$ とするとき、$R(n,k)$ が次のように表せることを示せ。</p>
+              <p>$$R(n,k)=\sum_{i=1}^k(-1)^{k-i}{}_kC_ii^n$$</p><br>（有名問題、写像12相の「区別区別全射」）
+            </div><br>
+
+            <div class="emphbox">
+              <p>(1) 360以下の正整数であって、360と互いに素であるものはいくつあるかを求めよ。</p>
+              <p>(2) $n$ 以下の正整数であって、 $n$ と互いに素であるものの個数を $\phi(n)$ とする。<br><br>
+              $n$ が $n = p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$ ($k$ は正整数、 $p_1,\cdots, p_k$ は相異なる素数、 $e_1,\cdots, e_k$ は正整数) という形で表せるとき、 $\phi(n)$ が次の形で表されることを示せ。</p><br>
+              $$\phi(n)=n\left(1-\frac{1}{p_1}\right)\left(1-\frac{1}{p_2}\right)\cdots\left(1-\frac{1}{p_k}\right)$$<br><br>(有名問題、オイラーのトーシェント関数)
+            </div><br>
+
+            <div class="emphbox">1000以下の素数は250個以下であることを示せ。<br><br>(一橋大2021)<br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2018-6-p1">
+                <label for="2018-6-p1"
+                class="toggle-label">▶ 初手</label>
+                <div class="toggle-content">   
+                    「2,3,5,7,...のいずれかで割り切れる自然数が○○以上」を示す。もちろん全ての素数を巡るのは厳しいので、どこかで打ち切る。
+                </div>
+            </div></div><br>
+
+
+            <div class="emphbox">
+              <p>サイコロを $n$ 回振り、そこまでの出目の総積を $X_n$ とする。 $X_n$ が30で割り切れる確率を求めよ。</p>（<span class="ora">東大2003　改</span>）
+              <br><br><div class="toggle-box" style="text-align: left;">
+                <input type="checkbox" id="2018-6-p2">
+                <label for="2018-6-p2"
+                class="toggle-label">▶ 初手</label>
+                <div class="toggle-content">   
+                  【「 $X_n$ が2で割り切れない」または<br>「 $X_n$ が3で割り切れない」または<br>「 $X_n$ が5で割り切れない」】<br>では<span style="font-weight: bold;">ない</span>確率を求める。（ドモルガン）
+                </div>
+            </div>
+            </div>
+
 
         </div>
 
