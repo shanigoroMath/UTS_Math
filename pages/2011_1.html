@@ -102,7 +102,8 @@
             <h2><div>解答例</div></h2>
 
             <p>(1)直線が円から切り取る弦の長さは、半径と点直公式で出すのが最適解。<br>
-              (2)少しややこしい微分。
+              (2)少しややこしい微分。<br><br>（※1：分母の形を見て $a=\tan\theta$ という置換を行うと $\color{cyan}S=\sqrt{(1-\sin2\theta)\sin2\theta}$ となるので、微分なしで解くことも可。相加相乗平均不等式の左辺そのものである。）<br>
+              （※2： $d$ について最大を求めるという方法もある。おそらく最速。）
                 <div class="toggle-box">
                     <input type="checkbox" id="2011-1">
                     <label for="2011-1"
@@ -113,18 +114,42 @@
                 </div>
             </p>
 
+            <p>＞書くことが少ないので、計算は省略不要かもしれません。</p>
+
+            <p>＞最大値 $\frac12$ はわざわざ書かなくてもマルでしょう。</p>
+
         </div>
 
         <div class="paragraph">
 
             <h2><div>動く図解</div></h2>
 
-            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+            <iframe src="https://www.desmos.com/calculator/ciptskp0ht?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
         </div>
 
         <div class="paragraph">
 
             <h2><div>問題の背景</div></h2>
+
+            <p>xy平面上で円と直線が交わっている構図は、受験数学ではおなじみです。今回の問題の設定を使って色々遊んでみましょう。（※並び順は適当です）</p>
+
+            <div class="emphbox">
+              <p>・ $A(-1,0)$ とするとき、 $AR\cdot AQ$ の値が一定であることを示せ。</p>
+              <p>・$QR$ の中点を $H$ とするとき、 $H$ の軌跡を求めよ。</p>
+              <p>・$\triangle{PQR}$ が正三角形になる $a$ を求めよ。</p>
+              <div class="toggle-box">
+                <input type="checkbox" id="2011-k">
+                <label for="2011-k"
+                class="toggle-label">▶ ヒント</label>
+                <div class="toggle-content">
+                    <p>ひとつめ：方べきの定理</p>
+                    <p>ふたつめ：$\angle{AHP}=90$゜</p>
+                    <p>みっつめ：$PH=\frac{\sqrt3}{2}$　(南山大2011と同様。詳しくは<a href="2004_1.html#section-4">2004-1</a>を参照。)</p>
+                </div>
+              </div>
+            </div>
+            
+            <p>初等幾何による計算の簡略化を疑い、最終手段として座標計算が選ばれるような姿勢が望ましいかと思います。</p>
 
         </div>
 
@@ -132,7 +157,25 @@
 
             <h2><div>類題紹介</div></h2>
 
-            <div class="emphbox"></div>
+            <div class="emphbox">
+                <p>$xyz$ 座標空間において，点 $P(0,0,1)$ を中心とする半径 $1$ の球を $S$ とする。$a$ を $0 < a < 1$ を満たす実数とし，平面 $z=a(x+1)$ と $S$ の共有点がなす図形を $C$ とする。<br>
+<br>
+(1)　$P$ を頂点とし、$C$ を底面に持つ円錐の体積 $V(a)$ を求めよ。<br>
+<br>
+(2)　$a$ が $0 < a < 1$ の範囲を動くとき，$V(a)$ が最大となる $a$ を求めよ。<br></p>(<span style="color: red;">東大2011　魔改造</span>)<br><br>
+
+              <div class="toggle-box">
+                <input type="checkbox" id="2011-p1">
+                <label for="2011-p1"
+                class="toggle-label">▶ ひとこと＆答え</label>
+                <div class="toggle-content">
+                    「魔改造」シリーズにしては安直かもしれません。<br>
+                    $$(1) \ V(a)=\frac{2\pi}{3}\frac{a(1-a)}{(a^2+1)^{\frac32}}\qquad (2) \ a=\frac{3-\sqrt5}{2}$$
+                </div>
+              </div>
+
+
+            </div>
 
         </div>
 
