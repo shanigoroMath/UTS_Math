@@ -59,6 +59,10 @@ a:active{
   color: orange;
 }
 
+.red{
+  color:red;
+}
+
 .yel{
   font-weight: bold;
   color: yellow;
