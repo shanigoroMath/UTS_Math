@@ -237,7 +237,7 @@ iframe {
       opacity: 1;
     }
     #problemtable-shadow1{
-      height: 2339px;
+      height: 2980px;
       width: 5%;
       left: 95%;
       position: relative;
@@ -246,7 +246,7 @@ iframe {
       pointer-events: none;
     }
     #problemtable-shadow2{
-      height: 2339px;
+      height: 2980px;
       width: 5%;
       position: relative;
       background: linear-gradient(to right,rgb(0, 0, 1,0.7),rgba(0,0,0,0));
