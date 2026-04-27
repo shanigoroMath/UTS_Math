@@ -88,7 +88,17 @@
             <h2><div>東大理系数学 2026-3</div></h2>
 
             <div class="emphbox">
-                <p></p>
+                <p>
+座標空間内の原点を中心とする半径 $5$ の球面を $S$ とする。$S$ 上の相異なる3点 $P,Q,R$ が次の条件を満たすように動く。<br>
+<br>
+条件：$P,Q$ は $xy$ 平面上にあり，三角形 $PQR$ の重心は $G(2,0,1)$ である。<br>
+<br>
+以下の問いに答えよ。<br>
+<br>
+(1)　線分 $PQ$ の中点 $M$ の軌跡を $xy$ 平面上に図示せよ。<br>
+<br>
+(2)　線分 $PQ$ が通過する範囲を $xy$ 平面上に図示せよ。
+</p>
             </div>
 
         </div>
@@ -97,13 +107,15 @@
 
             <h2><div>方針、略解</div></h2>
 
-            <p>(1)
+            <p>(1)軌跡が円になることは少し計算すれば分かるが、除外点を含め記述しようとするとやや難しく感じるかもしれない。
+              (2)(1)がちょうど誘導になっているが、パラメータで置いた後の計算も少々面倒。（なお、実はパラメータを一切導入せずとも解ける。）
                 <div class="toggle-box">
                     <input type="checkbox" id="2026-3">
                     <label for="2026-3"
-                    class="toggle-label">▶ 解答例(画像)(タップで拡大)</label>
-                    <div class="toggle-content longanswer">
-                        <img src="" class="clickable-img" onclick="openImgModal(this.src)">
+                    class="toggle-label">▶ 答え</label>
+                    <div class="toggle-content">
+                      <p>(1) 円 $(x-3)^2+y^2=4$ の周から $(5,0)$ を除いた図形</p>
+                      <p>(2) $\frac{(x-3)^2}{4}-\frac{y^2}{5}\leqq 1$ かつ $x^2+y^2\leqq25$ かつ $(x,y)\neq(5,0)$</p>
                     </div>
                 </div>
             </p>
@@ -114,21 +126,119 @@
 
             <h2><div>動く図解</div></h2>
 
-            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+            <iframe src="https://www.desmos.com/calculator/woymwhshue?embed" width="300px" height="300px" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+            <img src="figure/Video Project 1.gif" height="300px">
         </div>
 
         <div class="paragraph">
 
             <h2><div>問題の背景</div></h2>
 
+            <p>ここでは(2)を詳しく扱いたいと思います。核心部分が似ている次の問題を元にして、本問を解くための要素を解析していきましょう。</p>
+
+            <div class="emphbox">①：$0\leqq\theta < 2\pi$の範囲で、$\cos\theta+\sin\theta=1$の解を全て求めよ。（10秒問題）</div>
+
+            <p>
+              <div class="toggle-box">
+                    <input type="checkbox" id="2026-3-p1">
+                    <label for="2026-3-p1"
+                    class="toggle-label">▶ 解説</label>
+                    <div class="toggle-content" style="text-align: left;">
+                      <p>基礎中の基礎の問題ですが、馬鹿にできません。左辺を合成して計算することもできますが、できれば円と直線のイメージで処理したいところです。</p>
+                      <p>そもそも$\cos,\sin$の定義は<span class="bluv">「単位円周上の点の座標」</span>だったのですから（cf.東大1999）、左辺は$x+y=1$と見なせるはずです。これと単位円の共有点は自明に(0,1)と(1,0)であり、それぞれの偏角が解になります。</p>
+                      <p><span class="minibox">$\displaystyle\therefore \ \theta=0,\frac{\pi}{2}$</span></p>
+                    </div>
+              </div>
+            </p>
+
+            <div class="emphbox">②：$\theta$を実数とするとき、$\displaystyle\frac{\sqrt{5}+\cos\theta}{\sqrt{5}+\sin\theta}$の値域を求めよ。ただし微分は禁止とする。</div>
+
+            <p>
+              <div class="toggle-box">
+                    <input type="checkbox" id="2026-3-p2">
+                    <label for="2026-3-p2"
+                    class="toggle-label">▶ 解説</label>
+                    <div class="toggle-content longanswer" style="text-align: left;">
+                      <p>意外と手が止まる人が多そうです。しかし値域問題を体系的に理解している方なら逆像法を疑うでしょう。実際、$=k$と置いて整理すると、$\color{purple}\cos\theta-k\sin\theta=\sqrt{5}(k-1)$となり、この等式を満たす$\theta$の存在条件を追うことになります。</p>
+                      <p>ここで先ほどの問題①を思い出しましょう。直線と円が見えてきましたか?それさえ見えれば次のように解けます。</p>
+                      <p>$$\begin{align}&[等式を満たす\thetaが存在する]\\ \Leftrightarrow &[直線x-ky=\sqrt{5}(k-1)が単位円と共有点を持つ]\\ \Leftrightarrow &[直線と原点の距離が1以下]\\ \Leftrightarrow & \frac{|\sqrt{5}(k-1)|}{\sqrt{1+k^2}}\leqq1\end{align}$$</p>
+                      <p>あとは両辺正より2乗して解けばチェックメイトです。</p>
+                      <p><span class="minibox">$\displaystyle\therefore \ \frac{1}{2}以上2以下$</span></p>
+                    </div>
+              </div>
+            </p>
+            
+
+            <p>これら二つの問題のカギは、「三角関数の方程式は、円と何かの共有点に話をすり替えられる」ことにあります。特に「何か」が直線や円などの場合は、その共有点を持つ条件というものが図形的に処理できてしまうのです！</p>
+
+            <p>以上の話を踏まえると、本問は大筋として次のような同値変形をすることになります。（多少の記号の濫用や省略あり）</p>
+
+            <p style="background-color:#333;padding: 10px 0px;">
+              $$\begin{align}
+              &[点Z(s,t)が求める領域(※1)に属する]\\
+              \Leftrightarrow&[Mを通るOMの垂線上にZを乗せられるような点M(3+2\cos\theta,2\sin\theta)(※2)がある]\\
+              \Leftrightarrow&\ \overrightarrow{OM}\cdot\overrightarrow{MZ}=0を満たすM(～,～)がある\\
+              \Leftrightarrow&\ sM_x+tM_y=M_x^2+M_y^2を満たすMがある\\
+              \Leftrightarrow&\ s(3+2\cos\theta)+t(2\sin\theta)=(3+2\cos\theta)^2+(2\sin\theta)^2を満たす\thetaがある\\
+              \end{align}$$
+            </p>
+
+            <p style="font-size: 0.6em;">(※1)注意1：今回は「線分」の通過領域なので、実際は　[Zが円$x^2+y^2=25$の中に入っている]　という条件を累加しないと一つ目の同値記号は機能しない。</p>
+            <p style="font-size: 0.6em;">(※2)注意2：実際は$\theta\neq0$なので、「最後の式の解が$\theta=0$のみになってしまう」場合は除かれる。これが(2)でも除外点が生じる理由である。</p>
+
+            <p>最後の式を変形してみてください。ここまでの話を理解していれば、これが問題②と全く同じ物であると分かるでしょう。</p>
+            
         </div>
 
         <div class="paragraph">
 
             <h2><div>類題紹介</div></h2>
 
-            <div class="emphbox"></div>
+            <p>今回解説で述べた考え方を使って色々な問題に挑戦してみましょう。</p>
 
+            <div class="emphbox">
+              <p>実数$\theta$についての方程式 $\displaystyle\frac{1}{\sqrt{3}}\cos\theta-2\sin\theta=-\frac{1}{2}$を解け。</p>
+              <div class="toggle-box">
+                    <input type="checkbox" id="2026-3-p3">
+                    <label for="2026-3-p3"
+                    class="toggle-label">▶ ひとこと</label>
+                    <div class="toggle-content" style="text-align: left;">
+                      <p>$x^2+y^2=1$と$x=2\sqrt{3}\sin\theta-\frac{\sqrt{3}}{2}$の共有点を考える</p>
+                      <p>試しに合成でも解いてみてほしい1問。今回の学びの有用性が伝わると嬉しい。</p>
+                    </div>
+              </div>
+            </div><br>
+
+            <div class="emphbox">
+              <p>実数$\alpha,\beta$が $\displaystyle\sqrt{2}\sin\alpha+\sin\beta=1$を満たしているとき、$\cos(\beta-\alpha)$ の最小値を求めよ。</p>
+              <p>(自作問題)</p>
+              <div class="toggle-box">
+                    <input type="checkbox" id="2026-3-p4">
+                    <label for="2026-3-p4"
+                    class="toggle-label">▶ ひとこと</label>
+                    <div class="toggle-content" style="text-align: left;">
+                      <p>$\beta-\alpha=k$ とおいて代入、加法定理で展開。</p>
+                    </div>
+              </div>
+            </div><br>
+
+            <div class="emphbox">
+              <p>座標平面上の楕円 $\displaystyle\frac{(x-1)^2}{4}+y^2=1$ の周のうち、領域 $\begin{cases}x\geqq0\\x\neq1\end{cases}$ に属している部分を$C$とする。</p>
+              <p>点$P(X,Y)$が$C$上をくまなく動くとき、2つの実数 $\displaystyle z_1=\frac{Y-\sqrt{X}}{1-X}$,　$\displaystyle z_2=\frac{Y+\sqrt{X}}{1-X}$の値域をそれぞれ $W_1,W_2$とおく。</p>
+              <p>$W_1\cup W_2$に属する実数を$Z$とするとき、$Z$の値域を求めよ。</p>
+              <p>(自作問題、駄作？)</p>
+              <div class="toggle-box">
+                    <input type="checkbox" id="2026-3-p5">
+                    <label for="2026-3-p5"
+                    class="toggle-label">▶ ひとこと＆答え</label>
+                    <div class="toggle-content" style="text-align: left;">
+                      <p>整理すると$(4Z^2-1)\cos\theta+4Z\sin\theta=2$が、$-\frac{2\pi}{3}\leqq\theta < -\frac{\pi}{2},-\frac{\pi}{2} < \theta < \frac{\pi}{2},\frac{\pi}{2} < \theta\leqq\frac{2\pi}{3}$ の範囲に解を持つ条件になる。</p>
+                      <p>$$答え：Z\leqq-\frac{\sqrt{3}}{2},\frac{\sqrt{3}}{2}\leqq Z$$</p>
+                    </div>
+              </div>
+            </div><br>
+            
         </div>
 
         <a class="gouts" href="../index.html"></a>
