@@ -108,7 +108,7 @@
             <h2><div>方針、略解</div></h2>
 
             <p>(1)軌跡が円になることは少し計算すれば分かるが、除外点を含め記述しようとするとやや難しく感じるかもしれない。
-              (2)(1)がちょうど誘導になっているが、パラメータで置いた後の計算も少々面倒。（なお、実はパラメータを一切導入せずとも解ける。）
+              (2)(1)がちょうど誘導になっているが、パラメータで置いた後も少々面倒。（特に記述）
                 <div class="toggle-box">
                     <input type="checkbox" id="2026-3">
                     <label for="2026-3"
@@ -126,9 +126,9 @@
 
             <h2><div>動く図解</div></h2>
 
-            <iframe src="https://www.desmos.com/calculator/woymwhshue?embed" width="300px" height="300px" style="border: 1px solid #ccc" frameborder=0></iframe>
+            <iframe src="https://www.desmos.com/calculator/woymwhshue?embed" width="300px" height="300px" style="border: 1px solid #ccc;margin-right: 10px ;" frameborder=0></iframe>
 
-            <img src="figure/Video Project 1.gif" height="300px">
+            <img src="figure/Video Project 2.gif" height="300px">
         </div>
 
         <div class="paragraph">
@@ -144,7 +144,7 @@
                     <input type="checkbox" id="2026-3-p1">
                     <label for="2026-3-p1"
                     class="toggle-label">▶ 解説</label>
-                    <div class="toggle-content" style="text-align: left;">
+                    <div class="toggle-content longanswer" style="text-align: left;">
                       <p>基礎中の基礎の問題ですが、馬鹿にできません。左辺を合成して計算することもできますが、できれば円と直線のイメージで処理したいところです。</p>
                       <p>そもそも$\cos,\sin$の定義は<span class="bluv">「単位円周上の点の座標」</span>だったのですから（cf.東大1999）、左辺は$x+y=1$と見なせるはずです。これと単位円の共有点は自明に(0,1)と(1,0)であり、それぞれの偏角が解になります。</p>
                       <p><span class="minibox">$\displaystyle\therefore \ \theta=0,\frac{\pi}{2}$</span></p>
@@ -160,7 +160,7 @@
                     <label for="2026-3-p2"
                     class="toggle-label">▶ 解説</label>
                     <div class="toggle-content longanswer" style="text-align: left;">
-                      <p>意外と手が止まる人が多そうです。しかし値域問題を体系的に理解している方なら逆像法を疑うでしょう。実際、$=k$と置いて整理すると、$\color{purple}\cos\theta-k\sin\theta=\sqrt{5}(k-1)$となり、この等式を満たす$\theta$の存在条件を追うことになります。</p>
+                      <p>意外と手が止まる人が多そうです。逆像法を疑うとよいでしょう。実際、与式を$k$と置いて整理すると、$\color{purple}\cos\theta-k\sin\theta=\sqrt{5}(k-1)$となり、この等式を満たす$\theta$の存在条件を追うことになります。</p>
                       <p>ここで先ほどの問題①を思い出しましょう。直線と円が見えてきましたか?それさえ見えれば次のように解けます。</p>
                       <p>$$\begin{align}&[等式を満たす\thetaが存在する]\\ \Leftrightarrow &[直線x-ky=\sqrt{5}(k-1)が単位円と共有点を持つ]\\ \Leftrightarrow &[直線と原点の距離が1以下]\\ \Leftrightarrow & \frac{|\sqrt{5}(k-1)|}{\sqrt{1+k^2}}\leqq1\end{align}$$</p>
                       <p>あとは両辺正より2乗して解けばチェックメイトです。</p>
