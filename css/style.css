@@ -68,6 +68,11 @@ a:active{
   color: yellow;
 }
 
+.bluv{
+  font-weight: bold;
+  color: blueviolet;
+}
+
 
 /* ==============================================
    main一律
@@ -435,6 +440,14 @@ iframe {
 
 .longanswer img{
   max-width: 400px!important;
+}
+
+/*=================minibox(ミニbox)=================*/
+
+.minibox {
+    border: 1px solid #000000;
+    border-radius: 6px;
+    padding: 1em;
 }
 
 /*=================emphbox(青box)=================*/

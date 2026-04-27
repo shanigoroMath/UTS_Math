@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2026年東大理系数学第1問</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YC89KNZML0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YC89KNZML0');
+</script>
+
+
+</head>
+
+
+<body data-problem="2026-1"  id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../index.html"></a>
+
+<div class="bookmark-box">
+  <button id="bookmark-btn">□</button>
+  <span id="bookmark-count">ブックマーク</span>
+</div>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2026-1</div></h2>
+
+            <div class="emphbox">
+                <p>(1)　関数 $f(\theta)=\sin\theta-\theta+\dfrac{\theta^3}{6}$ の区間 $-1\le\theta\le1$ における最大値 $M$ および最小値 $m$ を求めよ。<br>
+<br>
+(2)　(1) で定めた $M$ に対し，次の不等式を示せ。<br>
+$$\dfrac{7}{8}\pi \le \int_0^{2\pi}\sin(\cos x-x)dx \le \dfrac{7}{8}\pi+4M$$</p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>方針、略解</div></h2>
+
+            <p>(1)
+                <div class="toggle-box">
+                    <input type="checkbox" id="2026-1">
+                    <label for="2026-1"
+                    class="toggle-label">▶ 解答例(画像)(タップで拡大)</label>
+                    <div class="toggle-content longanswer">
+                        <img src="" class="clickable-img" onclick="openImgModal(this.src)">
+                    </div>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>動く図解</div></h2>
+
+            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <div class="emphbox"></div>
+
+        </div>
+
+        <a class="gouts" href="../index.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+const nav = document.getElementById("side-nav");
+const toggle = document.getElementById("side-toggle");
+const close = document.getElementById("side-close");
+const overlay = document.getElementById("side-overlay");
+
+toggle.onclick = () => {
+  nav.classList.toggle("open");
+  overlay.classList.toggle("show");
+};
+
+close.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+// 背景クリックで閉じる
+overlay.onclick = () => {
+  nav.classList.remove("open");
+  overlay.classList.remove("show");
+};
+
+});
+</script>
+
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
+});
+</script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const key = "bookmark-" + location.pathname;
+
+  const btn = document.getElementById("bookmark-btn");
+  const count = document.getElementById("bookmark-count");
+
+  if (!btn || !count) return;
+
+  let bookmarked = false;
+
+  const raw = localStorage.getItem(key);
+  if (raw) {
+    try {
+      const data = JSON.parse(raw);
+      bookmarked = !!data.bookmarked;
+    } catch {}
+  }
+
+  update();
+
+  btn.addEventListener("click", () => {
+    bookmarked = !bookmarked;
+
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        bookmarked: bookmarked,
+        title: document.title
+      })
+    );
+
+    update();
+  });
+
+  function update() {
+    if (bookmarked) {
+      btn.classList.add("bookmarked");
+      btn.textContent = "■";
+      count.textContent = "ブックマーク済み";
+    } else {
+      btn.classList.remove("bookmarked");
+      btn.textContent = "□";
+      count.textContent = "ブックマーク";
+    }
+  }
+
+});
+</script>
+
+
+
+<script>
+function openImgModal(src) {
+  const modal = document.getElementById("img-modal");
+  const modalImg = document.getElementById("img-modal-content");
+  modalImg.src = src;
+  modal.style.display = "block";
+}
+
+function closeImgModal() {
+  document.getElementById("img-modal").style.display = "none";
+}
+</script>
+
+
+
+
+<div id="img-modal" onclick="closeImgModal()">
+  <img id="img-modal-content">
+</div>
+
+</body>
+<div id="side-overlay"></div>
+
+
+</html>
